@@ -15,3 +15,5 @@ ENV NODE_PATH=./build
 RUN npm run build
 
 EXPOSE 4000
+
+CMD [ "node", "index.js" ]
