@@ -27,11 +27,9 @@ app.post("/create-checkout-session", async (req, res) => {
       },
     ],
     mode: "payment",
-    success_url: `${YOUR_DOMAIN}/success.html`,
-    cancel_url: `${YOUR_DOMAIN}/cancel.html`,
+    success_url: `${YOUR_DOMAIN}/?success=true`,
+    cancel_url: `${YOUR_DOMAIN}?canceled=true`,
   })
-
- 
 
   res.redirect(303, session.url)
 })
@@ -43,4 +41,3 @@ try {
 } catch (error) {
   console.error(`Error occured`)
 }
-
