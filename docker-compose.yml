@@ -13,7 +13,5 @@ services:
   expose:
       - "80"
       - "443"
-    ports:
-      - "80:80"
-      - "443:443"
+
     command: npm run dev
