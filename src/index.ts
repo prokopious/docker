@@ -3,7 +3,7 @@ const stripe = require("stripe")(
   "sk_test_51HfxkwLI0RKXakgYsf8TccSDaUkqNmnPh75wzx7qQxLXRGtUIGTMiZfttYHsQ4mlOwskzEbKsFF9aZ4LsGbpfVPE00YBWvYnD0"
 )
 const app: Application = express()
-const port: number = 3000
+const port: number = 443
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
