@@ -11,7 +11,7 @@ services:
       - ./nodemon.json:/home/node/app/nodemon.json
     container_name: ts-node-docker
   expose:
-      - "80"
-      - "443"
+      - "3000"
+   
 
     command: npm run dev
