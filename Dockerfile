@@ -14,6 +14,6 @@ ENV NODE_PATH=./build
 
 RUN npm run build
 
-EXPOSE 443
+EXPOSE 3000
 
 CMD [ "node", "build/index.js" ]
