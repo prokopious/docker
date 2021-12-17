@@ -10,6 +10,10 @@ services:
       - ./src:/home/node/app/src
       - ./nodemon.json:/home/node/app/nodemon.json
     container_name: ts-node-docker
-    expose:
-      - '80'
+  expose:
+      - "80"
+      - "443"
+    ports:
+      - "80:80"
+      - "443:443"
     command: npm run dev
