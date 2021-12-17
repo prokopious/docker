@@ -12,6 +12,4 @@ services:
     container_name: ts-node-docker
     expose:
       - '80'
-    ports:
-      - '80:80'
     command: npm run dev
