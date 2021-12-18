@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        html {
+            background-color: rgb(210, 215, 240);
+        }
+      #box {
+   
+      }
+      p {
+        font-family: Helvetica;
+      }
+      #code {
+        font-family: courier;
+        background-color: rgb(226, 108, 108);
+      }
+      .centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 90%;
+        max-width: 900px;
+        /* bring your own prefixes */
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <div class="centered">
+        <p>
+          This backend is powered by Stripe, Ubuntu, AWS EC2, Docker, Nginx,
+          Typescript, and Node/Express. It exposes single hard-coded
+          <span id="code">.post()</span> endpoint for
+          <a href="https://suspicious-jepsen-411cb1.netlify.app/"
+            >this product</a
+          >. The code can be found <a href="https://github.com/prokopious/docker">here</a>.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

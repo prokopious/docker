@@ -9,26 +9,23 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static("public"))
 
-app.get("/", async (req: Request, res: Response): Promise<Response> => {
-  return res.status(200).send({
-    message: "This back-end is powered by Stripe, Docker, TypeScript, and AWS!",
-  })
+app.get("/", async (req: Request, res: Response): Promise<any> => {
+  return res.status(200).sendFile(__dirname + "/index.html")
 })
 
-const YOUR_DOMAIN: string = "http://localhost:4000"
+const YOUR_DOMAIN: string = "https://suspicious-jepsen-411cb1.netlify.app/"
 
 app.post("/create-checkout-session", async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
-        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
         price: "price_1IOXwhLI0RKXakgY1KlLggrz",
         quantity: 1,
       },
     ],
     mode: "payment",
-    success_url: `${YOUR_DOMAIN}/?success=true`,
-    cancel_url: `${YOUR_DOMAIN}?canceled=true`,
+    success_url: `${YOUR_DOMAIN}/success`,
+    cancel_url: `${YOUR_DOMAIN}`,
   })
 
   res.redirect(303, session.url)
