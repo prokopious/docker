@@ -39,11 +39,10 @@ app.get("/", async (req: Request, res: Response): Promise<any> => {
         <div class="centered">
           <p>
             This backend is powered by Stripe, Ubuntu, AWS EC2, Docker, Nginx,
-            Typescript, and Node/Express. It exposes single hard-coded
-            <span id="code">.post()</span> endpoint for
-            <a href="https://suspicious-jepsen-411cb1.netlify.app/"
-              >this product</a
-            >. The code can be found <a href="https://github.com/prokopious/docker">here</a>.
+            Typescript, and NodeJS. It redirects customers to the checkout page for <a href="https://suspicious-jepsen-411cb1.netlify.app/"
+            >this product</a
+          > by means of a hard-coded
+            <span id="code">.post()</span> endpoint. The code can be found <a href="https://github.com/prokopious/docker">here</a>.
           </p>
         </div>
       </div>
