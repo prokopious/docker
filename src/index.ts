@@ -2,18 +2,17 @@ import express, { Application, Request, Response } from "express"
 const stripe = require("stripe")(
   "sk_test_51HfxkwLI0RKXakgYsf8TccSDaUkqNmnPh75wzx7qQxLXRGtUIGTMiZfttYHsQ4mlOwskzEbKsFF9aZ4LsGbpfVPE00YBWvYnD0"
 )
-const path = require('path');
+const path = require("path")
 
 const app: Application = express()
 const port: number = 3000
-
+app.use(express.static(path.join(__dirname, "..", "build")))
+app.use(express.static("public"))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.get("/", async (req: Request, res: Response): Promise<any> => {
-  res
-    .status(200)
-    .sendFile(path.join(__dirname, '/index.html'));
+  res.status(200).sendFile(path.join(__dirname, "..", "build", "index.html"))
 })
 
 const YOUR_DOMAIN: string = "https://suspicious-jepsen-411cb1.netlify.app/"
